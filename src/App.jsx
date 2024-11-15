@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HomeLayout } from './component';
-import { Home, Login } from './pages';
+
 // import {
 //   Accounting,
 //   AdvanceAccounting,
@@ -46,10 +46,6 @@ const App = () => {
           element: <Home />,
         },
       ],
-    },
-    {
-      path: '/login',
-      element: <Login />,
     },
   ]);
   return <RouterProvider router={routes} />;
