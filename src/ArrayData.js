@@ -1,21 +1,22 @@
-import { IoIosArrowDown } from 'react-icons/io';
+// import { IoIosArrowDown } from 'react-icons/io';
+
 export const navarry = [
   {
     title: 'Small Business',
-    icon: IoIosArrowDown,
+    // icon: <IoIosArrowDown />,
     id: 1,
     link: '/small-business',
   },
   {
     title: 'Accountants',
-    icon: IoIosArrowDown,
+    // icon: <IoIosArrowDown />,
     id: 2,
     link: '/accountants',
   },
   { title: 'Pricing', id: 3, link: '/pricing' },
   {
     title: 'Learn & Support',
-    icon: IoIosArrowDown,
+    // icon: <IoIosArrowDown />,
     id: 4,
     link: '/learn-support',
   },

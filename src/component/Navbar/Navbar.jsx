@@ -43,34 +43,35 @@ const Navbar = () => {
                 </Link>
                 <span className='border-b-2 border-transparent w-0 group-hover:w-full transition-all duration-300 ease-out'></span>
                 {isHovered && item.id === 1 && (
-                  <div className='relative bg-red-400 w-full'>
-                    <div className='absolute top-full mt-0 px-32 shadow-lg rounded-lg flex justify-center items-center w-[100%] bg-yellow-400'>
-                      {navitemarry.map((navItem, index) => (
-                        <div
-                          key={index}
-                          className='flex  bg-gray-500 flex-col px-4'
-                        >
-                          <h4 className='font-bold mb-2'>{navItem.Title}</h4>
-                          <ul className='space-y-1'>
-                            {Object.keys(navItem)
-                              .filter((key) => key.startsWith('p'))
-                              .map((key, idx) => (
-                                <li
-                                  key={idx}
-                                  className='text-gray-700 hover:text-green-500'
+                  <div
+                    className='absolute top-full mt-0  shadow-lg rounded-lg flex justify-evenly
+                     items-center w-[1100px] h-[90vh] bg-yellow-400'
+                  >
+                    {navitemarry.map((navItem, index) => (
+                      <div
+                        key={index}
+                        className='flex bg-gray-500  flex-col gap-4 px-4'
+                      >
+                        <h4 className='font-bold mb-2'>{navItem.Title}</h4>
+                        <ul className='space-y-1'>
+                          {Object.keys(navItem)
+                            .filter((key) => key.startsWith('p'))
+                            .map((key, idx) => (
+                              <li
+                                key={idx}
+                                className='text-gray-700 hover:text-green-500'
+                              >
+                                <Link
+                                  to={navItem[key].link}
+                                  onClick={() => setIsHovered(false)} // Close the popup on click
                                 >
-                                  <Link
-                                    to={navItem[key].link}
-                                    onClick={() => setIsHovered(false)} // Close the popup on click
-                                  >
-                                    {navItem[key].name}
-                                  </Link>
-                                </li>
-                              ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
+                                  {navItem[key].name}
+                                </Link>
+                              </li>
+                            ))}
+                        </ul>
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
