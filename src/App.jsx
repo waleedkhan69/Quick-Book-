@@ -7,6 +7,13 @@ import CollaboratorScreen from './QuickPage/CollaboratorScreen';
 import PurchaseOrderScreen from './QuickPage/PurchaseOrderScreen';
 import ReceiveItems from './QuickPage/ReceiveItems';
 import QuoteEstimateScreen from './QuickPage/QuoteEstimateScreen';
+import InvoiceScreen from './QuickPage/InvoiceScreen';
+import SalesPersonScreen from './QuickPage/SalesPersonScreen';
+import ScheduleItemToBeInvoiced from './QuickPage/ScheduleItemToBeInvoiced';
+import CheckScreen from './QuickPage/CheckScreen';
+import ContractScreen from './QuickPage/ContractScreen';
+import AccountScreen from './QuickPage/AccountScreen';
+import PayReceiveScreen from './QuickPage/PayReceiveScreen';
 
 const App = () => {
   const routes = createBrowserRouter([
@@ -38,6 +45,34 @@ const App = () => {
           path: '/quote-estimate-screen',
           element: <QuoteEstimateScreen />,
         },
+        {
+          path:'/invoice',
+          element: <InvoiceScreen />,
+        },
+        {
+          path:'/sales-person',
+          element:<SalesPersonScreen/>
+        },
+        {
+          path:'/schedule-item-to-be-invoiced',
+          element:<ScheduleItemToBeInvoiced/>
+        },
+        {
+          path:'/check-screen',
+          element:<CheckScreen />
+        },
+        {
+          path:'/contract-screen',
+          element:<ContractScreen />
+        },
+        {
+          path:'/account-screen',
+          element:<AccountScreen />
+        },
+        {
+          path:'/pay-receive-screen',
+          element:<PayReceiveScreen />
+        }
       ],
     },
   ]);

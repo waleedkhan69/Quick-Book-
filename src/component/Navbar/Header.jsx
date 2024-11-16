@@ -25,7 +25,7 @@ const Header = () => {
         </div>
 
         {/* Main Links Section for Large Screens */}
-        <div className='hidden lg:flex justify-center space-x-8 mt-4'>
+        <div className='hidden lg:flex justify-center items-center space-x-8 mt-4'>
           <Link
             to='/supplier-screen'
             className='text-white hover:text-green-200'
