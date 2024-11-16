@@ -39,12 +39,7 @@ const CustomerForm = () => {
       </div>
 
       {/* Toggle Switch */}
-      <div className='flex items-center'>
-        <label className='text-sm font-medium'>Is Active?</label>
-        <div className='ml-2'>
-          <FaToggleOff className='text-gray-400' />
-        </div>
-      </div>
+      <div className='flex items-center'></div>
     </div>
   );
 };

@@ -5,13 +5,38 @@ const DocumentsTab = () => {
   const [docType, setDocType] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
 
+  // Add Document
   const handleAddDocument = () => {
-    setDocuments([
-      ...documents,
-      { type: docType, expiry: expiryDate, active: true },
-    ]);
+    if (!docType.trim() || !expiryDate) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    const newDocument = {
+      type: docType,
+      expiry: expiryDate,
+      active: new Date(expiryDate) >= new Date(), // Set active status based on expiry date
+    };
+
+    setDocuments([...documents, newDocument]);
     setDocType('');
     setExpiryDate('');
+  };
+
+  // Toggle Active Status
+  const toggleActiveStatus = (index) => {
+    setDocuments((prevDocuments) =>
+      prevDocuments.map((doc, i) =>
+        i === index ? { ...doc, active: !doc.active } : doc
+      )
+    );
+  };
+
+  // Delete Document
+  const handleDeleteDocument = (index) => {
+    setDocuments((prevDocuments) =>
+      prevDocuments.filter((_, i) => i !== index)
+    );
   };
 
   return (
@@ -55,17 +80,36 @@ const DocumentsTab = () => {
             {documents.map((doc, index) => (
               <li
                 key={index}
-                className='flex items-center justify-between p-2 bg-gray-100 rounded-md'
+                className={`flex items-center justify-between p-2 rounded-md ${
+                  new Date(doc.expiry) < new Date()
+                    ? 'bg-red-100'
+                    : 'bg-gray-100'
+                }`}
               >
-                <span>{doc.type}</span>
-                <span>{doc.expiry}</span>
-                <span
-                  className={`text-xs ${
-                    doc.active ? 'text-green-500' : 'text-red-500'
-                  }`}
-                >
-                  {doc.active ? 'Active' : 'Inactive'}
-                </span>
+                <div>
+                  <span className='font-medium'>{doc.type}</span>
+                  <span className='ml-4 text-sm text-gray-500'>
+                    {doc.expiry}
+                  </span>
+                </div>
+                <div className='flex items-center space-x-2'>
+                  <button
+                    onClick={() => toggleActiveStatus(index)}
+                    className={`px-2 py-1 text-xs font-medium rounded-md ${
+                      doc.active
+                        ? 'bg-green-500 text-white'
+                        : 'bg-gray-300 text-gray-600'
+                    }`}
+                  >
+                    {doc.active ? 'Active' : 'Inactive'}
+                  </button>
+                  <button
+                    onClick={() => handleDeleteDocument(index)}
+                    className='px-2 py-1 text-xs font-medium text-white bg-red-500 rounded-md'
+                  >
+                    Delete
+                  </button>
+                </div>
               </li>
             ))}
           </ul>

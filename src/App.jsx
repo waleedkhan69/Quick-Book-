@@ -1,39 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HomeLayout } from './component';
-
-// import {
-//   Accounting,
-//   AdvanceAccounting,
-//   VirtualBookKeping,
-//   Payroll,
-//   PayContractors,
-//   TimeTracking,
-//   PaymentAndBanking,
-//   DestopEnterprise,
-//   Invoice,
-//   TrackExpenses,
-//   ManageBills,
-//   ExpertTaxPrepHelp,
-//   GetTexDeduction,
-//   RunReport,
-//   TrackMile,
-//   ManageProject,
-//   ManageEcommerce,
-//   GetPaidAndPayBills,
-//   ManageBanking,
-//   GetALoan,
-//   SmallBusiness,
-//   MidSizeBusiness,
-//   NewBusiness,
-//   SelfeEmployed,
-//   NonProfit,
-//   Manufacturing,
-//   Construction,
-//   ProfessionalServices,
-//   Legal,
-//   Restaurants,
-//   Retail,
-// } from './pages/index';
+import Home from './QuickPage/Home';
+import Login from './QuickPage/Login';
+import SupplierScreen from './QuickPage/SupplierScreen';
 
 const App = () => {
   const routes = createBrowserRouter([
@@ -44,6 +13,10 @@ const App = () => {
         {
           path: '/',
           element: <Home />,
+        },
+        {
+          path: '/supplier-screen',
+          element: <SupplierScreen />,
         },
       ],
     },

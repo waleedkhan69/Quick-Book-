@@ -1,18 +1,22 @@
-import { Fragment, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import logo from '../../assets/NavbarImage/logo.svg';
 import { IoIosArrowDown } from 'react-icons/io';
+import { FiMenu, FiX } from 'react-icons/fi'; // Menu and Close icons
 import { Link } from 'react-router-dom';
-import { navarry } from '../../ArrayData';
-import { navitemarry } from '../../ArrayData';
+import { navarry } from '../../ArrayData'; // Ensure this is correctly imported
 
 const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // State for toggling menu
+
+  console.log(navarry); // Debugging to ensure navarry is populated
 
   return (
     <Fragment>
       <nav className='flex justify-between items-center bg-yellow-50 p-3'>
-        <div className='flex justify-between w-[70%]'>
-          <div className='flex justify-center items-center w-48 gap-3'>
+        <div className='flex items-center w-full justify-between'>
+          {/* Logo Section */}
+          <div className='flex items-center gap-3'>
             <div className='h-8 w-8 cursor-pointer rounded-full'>
               <img
                 src={logo}
@@ -22,8 +26,20 @@ const Navbar = () => {
             </div>
             <h1 className='font-bold text-black'>quickbooks</h1>
           </div>
-          <div className='flex justify-evenly gap-7 items-center'>
-            {navarry.map((item) => (
+
+          {/* Menu Icon for Mobile */}
+          <div className='md:hidden flex items-center'>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className='text-2xl focus:outline-none'
+            >
+              {menuOpen ? <FiX /> : <FiMenu />}
+            </button>
+          </div>
+
+          {/* Nav Items for Desktop */}
+          <div className='hidden md:flex justify-evenly gap-7 items-center'>
+            {navarry?.map((item) => (
               <div
                 key={item.id}
                 className='relative flex flex-col items-center group'
@@ -34,51 +50,20 @@ const Navbar = () => {
                   to={item.link}
                   className='flex items-center gap-2 cursor-pointer group-hover:text-[#2CA01C]'
                 >
-                  <span className='font-normal'>{item.title}</span>
+                  <span className='font-semibold'>{item.title}</span>
                   {item.icon && (
                     <span className='transform transition-transform duration-300 group-hover:rotate-180'>
                       {item.icon}
                     </span>
                   )}
                 </Link>
-                <span className='border-b-2 border-transparent w-0 group-hover:w-full transition-all duration-300 ease-out'></span>
-                {isHovered && item.id === 1 && (
-                  <div
-                    className='absolute top-full mt-0  shadow-lg rounded-lg flex justify-evenly
-                     items-center w-[1100px] h-[90vh] bg-yellow-400'
-                  >
-                    {navitemarry.map((navItem, index) => (
-                      <div
-                        key={index}
-                        className='flex bg-gray-500  flex-col gap-4 px-4'
-                      >
-                        <h4 className='font-bold mb-2'>{navItem.Title}</h4>
-                        <ul className='space-y-1'>
-                          {Object.keys(navItem)
-                            .filter((key) => key.startsWith('p'))
-                            .map((key, idx) => (
-                              <li
-                                key={idx}
-                                className='text-gray-700 hover:text-green-500'
-                              >
-                                <Link
-                                  to={navItem[key].link}
-                                  onClick={() => setIsHovered(false)} // Close the popup on click
-                                >
-                                  {navItem[key].name}
-                                </Link>
-                              </li>
-                            ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
             ))}
           </div>
         </div>
-        <div className='flex justify-center items-center gap-4'>
+
+        {/* Sales Info and Buttons */}
+        <div className='hidden md:flex justify-center items-center gap-4'>
           <p className='font-medium flex justify-center items-center gap-2 relative'>
             Talk to Sales: 1-855-443-4797 <IoIosArrowDown />
           </p>
@@ -88,6 +73,36 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className='absolute top-0 left-0 w-full h-full bg-yellow-50 z-50 p-4 md:hidden'>
+          <button
+            onClick={() => setMenuOpen(false)}
+            className='text-2xl absolute top-4 right-4 focus:outline-none'
+          >
+            <FiX />
+          </button>
+          <div className='flex flex-col items-center space-y-6 mt-16'>
+            {navarry?.map((item) => (
+              <Link
+                key={item.id}
+                to={item.link}
+                className='text-lg font-semibold text-black'
+                onClick={() => setMenuOpen(false)} // Close menu on click
+              >
+                {item.title}
+              </Link>
+            ))}
+            <button className='w-full py-2 mt-4 text-white bg-black rounded-md'>
+              Talk to Sales: 1-855-443-4797
+            </button>
+            <button className='w-full  mt-2 px-5 text-black border-2 border-black rounded-md'>
+              Sign In
+            </button>
+          </div>
+        </div>
+      )}
     </Fragment>
   );
 };
