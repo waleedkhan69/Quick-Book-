@@ -64,10 +64,7 @@ const Navbar = () => {
 
         {/* Sales Info and Buttons */}
         <div className='hidden md:flex justify-center items-center gap-4'>
-          <p className='font-medium flex justify-center items-center gap-2 relative'>
-            Talk to Sales: 1-855-443-4797 <IoIosArrowDown />
-          </p>
-          <button className='flex group justify-center font-semibold hover:bg-gray-700 hover:text-white items-center gap-4 border-black border-2 px-4 py-2'>
+          <button className='flex group w-32 justify-center font-semibold hover:bg-gray-700 hover:text-white items-center gap-4 border-black border-2 px-4 py-4'>
             Sign In
             <IoIosArrowDown className='group-hover:rotate-180 duration-200' />
           </button>
@@ -94,9 +91,7 @@ const Navbar = () => {
                 {item.title}
               </Link>
             ))}
-            <button className='w-full py-2 mt-4 text-white bg-black rounded-md'>
-              Talk to Sales: 1-855-443-4797
-            </button>
+
             <button className='w-full  mt-2 px-5 text-black border-2 border-black rounded-md'>
               Sign In
             </button>
