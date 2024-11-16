@@ -8,7 +8,6 @@ import PurchaseOrderScreen from './QuickPage/PurchaseOrderScreen';
 import ReceiveItems from './QuickPage/ReceiveItems';
 import QuoteEstimateScreen from './QuickPage/QuoteEstimateScreen';
 
-
 const App = () => {
   const routes = createBrowserRouter([
     {
@@ -20,13 +19,8 @@ const App = () => {
           element: <Home />,
         },
         {
-<<<<<<< HEAD
           path: '/supplier-screen',
           element: <SupplierScreen />,
-        },
-=======
-          path:'/supplier-screen',
-          element: <SupplierScreen />
         },
         {
           path: '/CollaboratorScreen',
@@ -37,15 +31,13 @@ const App = () => {
           element: <PurchaseOrderScreen />,
         },
         {
-          path:'/receive-items',
-          element: <ReceiveItems />
+          path: '/receive-items',
+          element: <ReceiveItems />,
         },
         {
-          path:'/quote-estimate-screen',
-          element:<QuoteEstimateScreen />
-        }
-
->>>>>>> 40dcc004ab839a5e35cbc60e3d24ceda09572040
+          path: '/quote-estimate-screen',
+          element: <QuoteEstimateScreen />,
+        },
       ],
     },
   ]);
