@@ -6,10 +6,10 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // QuickBooks color reference
-  const quickBooksGreen = 'bg-[#2ca01c]';
+  // const quickBooksGreen = 'bg-[#2ca01c]';
 
   return (
-    <div className={`${quickBooksGreen} mb-4`}>
+    <div className={` bg-[#2ca01c] mb-4`}>
       <nav className='container mx-auto p-4'>
         {/* Header Top Section */}
         <div className='flex justify-between items-center'>
