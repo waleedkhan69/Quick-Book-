@@ -30,15 +30,15 @@ const App = () => {
           element: <SupplierScreen />,
         },
         {
-          path: '/CollaboratorScreen',
+          path: '/collaborator-screen',
           element: <CollaboratorScreen />,
         },
         {
-          path: '/PurchaseOrderScreen',
+          path: '/purchase-order-screen',
           element: <PurchaseOrderScreen />,
         },
         {
-          path: '/receive-items',
+          path: '/receive-purchase-order-screen',
           element: <ReceiveItems />,
         },
         {
@@ -46,19 +46,19 @@ const App = () => {
           element: <QuoteEstimateScreen />,
         },
         {
-          path:'/invoice',
+          path:'/invoice-screen',
           element: <InvoiceScreen />,
         },
         {
-          path:'/sales-person',
+          path:'/sales-person-screen',
           element:<SalesPersonScreen/>
         },
         {
-          path:'/schedule-item-to-be-invoiced',
+          path:'/schedule-item-to-be-invoiced-screen',
           element:<ScheduleItemToBeInvoiced/>
         },
         {
-          path:'/check-screen',
+          path:'/write-check-screen',
           element:<CheckScreen />
         },
         {
@@ -70,7 +70,7 @@ const App = () => {
           element:<AccountScreen />
         },
         {
-          path:'/pay-receive-screen',
+          path:'/pay-/-receive-screen',
           element:<PayReceiveScreen />
         }
       ],

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import pic from '../../src/assets/bakimg.png';
 
 const ScheduleItemToBeInvoiced = () => {
   const [scheduleItems, setScheduleItems] = useState([]);
@@ -41,7 +42,14 @@ const ScheduleItemToBeInvoiced = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6">
+    <div className="max-w-4xl mx-auto p-6 space-y-6"
+    style={{
+      backgroundImage: `url(${pic})`, // Set the imported image as background
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed', // Optional: make the background fixed
+    }}
+    >
       <h2 className="text-2xl font-semibold text-center">Schedule Item to be Invoiced</h2>
 
       {/* Customer and Contract Section */}
