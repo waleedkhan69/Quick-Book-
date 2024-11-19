@@ -64,7 +64,7 @@ const Navbar = () => {
 
         {/* Sales Info and Buttons */}
         <div className='hidden md:flex justify-center items-center gap-4'>
-          <button className='flex group w-32 justify-center font-semibold hover:bg-gray-700 hover:text-white ml-2 items-center gap-4 border-black border-2 px-4 py-3'>
+          <button className='flex group w-32 justify-center font-semibold hover:bg-[#009688] hover:text-white ml-2 items-center gap-4 border-black border-[1px] px-4 py-3'>
             Sign In
             <IoIosArrowDown className='group-hover:rotate-180 duration-200' />
           </button>
