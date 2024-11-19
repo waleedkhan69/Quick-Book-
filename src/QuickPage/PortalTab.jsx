@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../src/Background.css';
 
 const PortalTab = () => {
   const [portalEnabled, setPortalEnabled] = useState(false);
@@ -7,7 +8,7 @@ const PortalTab = () => {
   const [password, setPassword] = useState('');
 
   return (
-    <div className='p-4'>
+    <div className='p-4 payback'>
       <h2 className='text-lg font-semibold'>Portal Access</h2>
 
       {/* Enable Portal */}

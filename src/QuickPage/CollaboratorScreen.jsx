@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import LocationAndPayment from './LocationAndPayment';
-import pic from '../../src/assets/bakimg.png';
+import '../../src/Background.css';
 
 function CollaboratorScreen() {
   const [insuranceDate, setInsuranceDate] = useState(null);
@@ -14,14 +14,7 @@ function CollaboratorScreen() {
   };
 
   return (
-    <div
-      className='container mx-auto p-4 sm:p-6 md:p-8 bg-cover bg-center'
-      style={{
-        backgroundImage: `url(${pic})`, // Set the image as background
-        backgroundSize: 'cover', // Ensure the image covers the entire div
-        backgroundRepeat: 'no-repeat', // Prevent the image from repeating
-      }}
-    >
+    <div className='container mx-auto p-4 sm:p-6 md:p-8 payback'>
       <div className='bg-white bg-opacity-70 p-6 rounded-md shadow-md'>
         <h2 className='text-2xl font-bold mb-4'>Collaborator Information</h2>
 

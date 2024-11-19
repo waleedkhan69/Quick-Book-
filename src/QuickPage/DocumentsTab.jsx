@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../src/Background.css';
 
 const DocumentsTab = () => {
   const [documents, setDocuments] = useState([]);
@@ -40,7 +41,7 @@ const DocumentsTab = () => {
   };
 
   return (
-    <div className='p-4'>
+    <div className='p-4 payback'>
       <h2 className='text-lg font-semibold'>Documents</h2>
 
       {/* Add New Document */}

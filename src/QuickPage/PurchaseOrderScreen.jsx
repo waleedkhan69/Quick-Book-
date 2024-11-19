@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import pic from '../../src/assets/bakimg.png';
+import '../../src/Background.css';
 
 function PurchaseOrderScreen() {
   const [productLines, setProductLines] = useState([
@@ -27,15 +27,7 @@ function PurchaseOrderScreen() {
   };
 
   return (
-    <div
-      className='container mx-auto p-4 sm:p-6 md:p-8 bg-cover bg-center'
-      style={{
-        backgroundImage: `url(${pic})`, // Set the image as background
-        backgroundSize: 'cover', // Ensure the image covers the entire div
-        backgroundRepeat: 'no-repeat',
-        width: '100%', // Prevent the image from repeating
-      }}
-    >
+    <div className='container payback mx-auto p-4 sm:p-6 md:p-8 bg-cover bg-center'>
       <div className='bg-white bg-opacity-90 p-6 rounded-md shadow-md'>
         <h2 className='text-2xl font-bold mb-4'>Purchase Order</h2>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import pic from '../../src/assets/bakimg.png';
+import '../../src/Background.css';
 
 function SupplierScreen() {
   const [insuranceDate, setInsuranceDate] = useState(null);
@@ -12,15 +12,7 @@ function SupplierScreen() {
   };
 
   return (
-    <div
-      className='container mx-auto p-4 sm:p-6 md:p-8'
-      style={{
-        backgroundImage: `url(${pic})`, // Set the imported image as background
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed', // Optional: make the background fixed
-      }}
-    >
+    <div className='payback container mx-auto p-4 sm:p-6 md:p-8'>
       <div className='bg-white opacity-90 px-12'>
         <h2 className='text-2xl font-bold mb-4'>Supplier Information</h2>
 

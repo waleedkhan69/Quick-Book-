@@ -1,0 +1,25 @@
+.payback {
+  /* background: linear-gradient(135deg, #b2f5ea, #ffffff); */
+  background: linear-gradient(135deg, #42a5f5, #66bb6a);
+  /* background-color: #009688; */
+}
+body {
+  background-color: #009688;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 45s linear infinite; /* Adjust duration as needed */
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused; /* Pause scrolling on hover */
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../src/Background.css';
 
 const LocationTab = () => {
   const [locations, setLocations] = useState([]); // State to manage the list of locations
@@ -14,7 +15,7 @@ const LocationTab = () => {
   };
 
   return (
-    <div className='p-4'>
+    <div className='p-4 payback'>
       <h2 className='text-lg font-semibold'>Locations</h2>
       <ul className='mt-4'>
         {locations.map((location, index) => (

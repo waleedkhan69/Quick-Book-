@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import pic from '../../src/assets/bakimg.png';
+import '../../src/Background.css';
 
 const QuoteEstimateInvoiceTemplate = () => {
   const [templateType, setTemplateType] = useState('Quote');
@@ -12,10 +12,7 @@ const QuoteEstimateInvoiceTemplate = () => {
 
   return (
     <Fragment>
-      <div
-        className='min-h-screen bg-cover bg-center bg-no-repeat flex flex-col items-center p-4'
-        style={{ backgroundImage: `url(${pic})` }}
-      >
+      <div className='min-h-screen payback bg-cover bg-center bg-no-repeat flex flex-col items-center p-4'>
         {/* Main Content */}
         <div className='w-full max-w-6xl bg-white bg-opacity-80 shadow-lg rounded-lg p-6 mb-4'>
           <h1 className='text-2xl font-bold text-blue-700 text-center md:text-left'>

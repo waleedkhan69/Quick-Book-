@@ -5,7 +5,7 @@ import LocationTab from './LocationTab';
 import DocumentsTab from './DocumentsTab';
 import AccountingTab from './AccountingTab';
 import PortalTab from './PortalTab';
-import pic from '../../src/assets/bakimg.png';
+import '../../src/Background.css';
 
 const CustomerScreen = () => {
   const [activeTab, setActiveTab] = useState('Customer Details');
@@ -20,10 +20,7 @@ const CustomerScreen = () => {
   ];
 
   return (
-    <div
-      className='min-h-screen bg-cover bg-center p-4 sm:p-6'
-      style={{ backgroundImage: `url(${pic})` }}
-    >
+    <div className='min-h-screen payback p-4 sm:p-6'>
       <div className='max-w-4xl lg:max-w-6xl mx-auto bg-white bg-opacity-50 rounded-md shadow-md space-y-6 p-4 sm:p-6'>
         {/* Tabs */}
         <Tabs tabs={tabs} activeTab={activeTab} onTabClick={setActiveTab} />

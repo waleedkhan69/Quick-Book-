@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import pic from '../../src/assets/bakimg.png'; // import your background image
+import '../../src/Background.css';
 
 const ReceiveItems = () => {
   const [receivedItems, setReceivedItems] = useState([]);
@@ -34,16 +34,7 @@ const ReceiveItems = () => {
   };
 
   return (
-    <div
-      className='max-w-4xl mx-auto p-4'
-      style={{
-        backgroundImage: `url(${pic})`, // Set the image as background
-        backgroundSize: 'cover', // Ensure the image covers the entire div
-        backgroundRepeat: 'no-repeat', // Prevent the image from repeating
-        backgroundPosition: 'center',
-        width: '100%', // Center the background image
-      }}
-    >
+    <div className='max-w-4xl payback mx-auto p-4'>
       <div className='bg-white bg-opacity-90 p-6 rounded-md shadow-md'>
         <h2 className='text-2xl font-semibold mb-6 text-center'>
           Receive Items

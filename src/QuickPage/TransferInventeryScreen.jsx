@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import pic from '../../src/assets/bakimg.png';
+import '../../src/Background.css';
 
 const TransfersInventoryScreen = () => {
   const [transfers, setTransfers] = useState([
@@ -50,10 +50,7 @@ const TransfersInventoryScreen = () => {
   };
 
   return (
-    <div
-      className='min-h-screen bg-cover bg-center p-6'
-      style={{ backgroundImage: `url(${pic})` }}
-    >
+    <div className='min-h-screen payback p-6'>
       <div className='max-w-6xl mx-auto bg-white shadow-md rounded-lg p-6 bg-opacity-90'>
         <h1 className='text-2xl font-bold mb-4 text-gray-700'>
           Transfers Inventory

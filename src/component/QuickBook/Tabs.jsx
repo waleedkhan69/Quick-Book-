@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
+// import '../../src/Background.css';
 
 const Tabs = ({ tabs = [], activeTab, onTabClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,7 +8,7 @@ const Tabs = ({ tabs = [], activeTab, onTabClick }) => {
   console.log('Tabs:', tabs); // Debugging to ensure tabs is populated
 
   return (
-    <div className='relative'>
+    <div className='relative '>
       {/* Menu Icon for Mobile */}
       <div className='sm:hidden flex justify-end'>
         <button

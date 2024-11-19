@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import pic from '../../src/assets/bakimg.png'; // Import the image
+import '../../src/Background.css';
 
 const QuoteEstimateScreen = () => {
   const [quoteData, setQuoteData] = useState({
@@ -49,17 +49,7 @@ const QuoteEstimateScreen = () => {
   };
 
   return (
-    <div
-      className='max-w-4xl mx-auto p-6 space-y-6'
-      style={{
-        backgroundImage: `url(${pic})`, // Use the imported image as the background
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        height: '70vh',
-        width: '100%',
-        backgroundPosition: 'center',
-      }}
-    >
+    <div className='max-w-4xl mx-auto p-6 space-y-6 payback'>
       <h2 className='text-2xl font-semibold text-center'>
         Quote / Estimate Screen
       </h2>
